@@ -5,30 +5,38 @@ import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.CoreMatchers.equalTo;
 
-public class zoom {
-/*
-    Given
-            https://restful-booker.herokuapp.com/booking/101
-        When
-            User sends a GET Request to the url
-        Then
-            HTTP Status Code should be 200
-        And
-            Content Type should be JSON
-        And
-            Status Line should be HTTP/1.1 200 OK
-     */
-
+public class zoom  {
+    /*
+Given
+https://automationexercise.com/api/productsList
+When
+User sends a GET Request to the url
+Then
+HTTP Status Code should be 200
+And
+Content Type should be "text/html; charset=utf-8"
+And
+Status Line should be HTTP/1.1 200 OK
+And
+There must be 12 Women, 9 Men, 13 Kids usertype in products
+*/
     @Test
-    public void get01() {
+    public void get01(){
+       String url="https://reqres.in/api/users/3";
 
-    String url="https://restful-booker.herokuapp.com/booking/101";
-    Response response=given().when().get(url);
+        Response response=given().when().get(url);
 
-    response.then().assertThat().statusCode(200).contentType(ContentType.JSON).statusLine("HTTP/1.1 200 OK");
+        //response.prettyPrint();
+
+        response.
+                then().
+                assertThat().
+                statusCode(200).
+                contentType(ContentType.JSON).statusLine("HTTP/1.1 200 OK");
+
 
     }
+
 
 }
