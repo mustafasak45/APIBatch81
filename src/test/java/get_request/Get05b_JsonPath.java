@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
 
-public class Get05b extends ReqresBaseUrl {
+public class Get05b_JsonPath extends ReqresBaseUrl {
     /*
         Given
           https://reqres.in/api/unknown/3
@@ -56,8 +56,6 @@ public class Get05b extends ReqresBaseUrl {
         softAssert.assertEquals(jsonPath.getString("data.pantone_value"),"19-1664","pantone_value degeri dogru degil");
         softAssert.assertEquals(jsonPath.getString("support.url"),"https://reqres.in/#support-heading","url degeri dogru degil");
         softAssert.assertEquals(jsonPath.getString("support.text"),"To keep ReqRes free, contributions towards server costs are appreciated!","text degeri dogru degil");
-
-
         softAssert.assertAll();
     }
 }

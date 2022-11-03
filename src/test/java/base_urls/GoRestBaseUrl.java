@@ -5,7 +5,8 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
 public class GoRestBaseUrl {
-    protected RequestSpecification spec;
+
+        protected RequestSpecification spec;
 
     @Before
     public void setup(){

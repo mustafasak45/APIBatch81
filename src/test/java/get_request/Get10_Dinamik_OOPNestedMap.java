@@ -11,7 +11,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
-public class Get10_Dinamik_MapCasting extends GoRestBaseUrl {
+public class Get10_Dinamik_OOPNestedMap extends GoRestBaseUrl {
      /*
    Given
        https://gorest.co.in/public/v1/users/2986

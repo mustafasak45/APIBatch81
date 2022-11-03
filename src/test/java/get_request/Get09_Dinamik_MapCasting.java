@@ -30,7 +30,6 @@ public class Get09_Dinamik_MapCasting extends RestfulBaseUrl {
     "additionalneeds": "Breakfast"
   }
  */
-
     @Test
     public void get09(){
         spec.pathParams("first","booking","second",91);
