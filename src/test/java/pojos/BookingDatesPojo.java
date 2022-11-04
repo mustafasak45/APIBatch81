@@ -36,10 +36,12 @@ public class BookingDatesPojo {
 
     //4) toString() methodunu olusturuyoruz
 
+
     @Override
     public String toString() {
-        return "BookingDatesPojo" +
+        return "BookingDatesPojo{" +
                 "checkin='" + checkin + '\'' +
-                ", checkout='" + checkout + '\'';
+                ", checkout='" + checkout + '\'' +
+                '}';
     }
 }
