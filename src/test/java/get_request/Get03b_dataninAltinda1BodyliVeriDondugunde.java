@@ -8,7 +8,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class Get03b extends ReqresBaseUrl {
+public class Get03b_dataninAltinda1BodyliVeriDondugunde extends ReqresBaseUrl {
     /*
    Given
        https://reqres.in/api/users/2

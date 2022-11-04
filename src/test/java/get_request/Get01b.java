@@ -27,7 +27,8 @@ public class Get01b {
         Response response=given().when().get(url);
         //response.prettyPrint();
 
-        response.then().assertThat().
+        response.then().
+                assertThat().
                 statusCode(200).
                 contentType(ContentType.JSON).
                 statusLine("HTTP/1.1 200 OK");

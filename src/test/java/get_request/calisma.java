@@ -1,8 +1,10 @@
 package get_request;
 
 import base_urls.GoRestBaseUrl;
+import com.google.gson.JsonObject;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.testng.asserts.SoftAssert;
 import test_data.calismaTestData;
 
 import java.util.HashMap;
@@ -13,40 +15,47 @@ import static org.junit.Assert.assertEquals;
 
 public class calisma extends GoRestBaseUrl {
  /*
- https://gorest.co.in/public/v1/users/2986
- {
-    "meta": null,
-    "data": {
-        "id": 2986,
-        "name": "Kanaka Jain",
-        "email": "kanaka_jain@stark.net",
-        "gender": "male",
-        "status": "active"
-    }
+{
+    "page": 1,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+        {
+            "id": 1,
+            "email": "george.bluth@reqres.in",
+            "first_name": "George",
+            "last_name": "Bluth",
+            "avatar": "https://reqres.in/img/faces/1-image.jpg"
+        },
+        {
+            "id": 2,
+            "email": "janet.weaver@reqres.in",
+            "first_name": "Janet",
+            "last_name": "Weaver",
+            "avatar": "https://reqres.in/img/faces/2-image.jpg"
+        },
+	.
+	.
+	.(burada aşağıya doğru bodyler devam ediyor)
 }
+
 */
 
     @Test
     public void get01(){
-    spec.pathParams("first","users","second",2986);
+        String url ="https://reqres.in/api/users";
 
-        Response response=given().spec(spec).when().get("/{first}/{second}");
-        response.prettyPrint();
+        Response response=given().when().get(url);
+       // response.prettyPrint();
 
-        calismaTestData obj = new calismaTestData();
-        Map<String,String> expData = obj.dataMap("Kanaka Jain","kanaka_jain@stark.net","male","active");
-        Map<String,Object> expMeta = obj.metaMap(null,expData);
-       // System.out.println("expMeta = " + expMeta);
-       // System.out.println("expData = " + expData);
+        Map<String,Object> actData = response.as(HashMap.class);
 
-        Map<String,Object> actMeta = response.as(HashMap.class);
-       // System.out.println("actMeta = " + actMeta);
+        System.out.println(actData);
 
-        assertEquals(expMeta.get("meta"),actMeta.get("meta"));
-        assertEquals(expData.get("name"),((Map)(actMeta.get("data"))).get("name"));
-        assertEquals(expData.get("email"),((Map)(actMeta.get("data"))).get("email"));
-        assertEquals(expData.get("gender"),((Map)(actMeta.get("data"))).get("gender"));
-        assertEquals(expData.get("status"),((Map)(actMeta.get("data"))).get("status"));
+
+
+
 
     }
 }

@@ -26,7 +26,6 @@ public class Get02b_BodyBosOldugunuKontrolEtme extends ReqresBaseUrl {
     @Test
     public void get02b(){
 
-
         spec.pathParams("first","users","second",23);
 
         Response response= given().spec(spec).when().get("/{first}/{second}");
