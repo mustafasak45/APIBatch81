@@ -43,6 +43,7 @@ And
         List<String> men=jsonPath.getList("products.category.usertype.findAll{it.usertype=='Men'}.usertype");
         List<String> kids=jsonPath.getList("products.category.usertype.findAll{it.usertype=='Kids'}.usertype");
 
+
         assertEquals(12,women.size());
         assertEquals(9,men.size());
         assertEquals(13,kids.size());

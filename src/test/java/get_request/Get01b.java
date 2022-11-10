@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class Get01b {
     /*
@@ -25,13 +26,14 @@ public class Get01b {
         String url = "https://reqres.in/api/users/3";
 
         Response response=given().when().get(url);
-        //response.prettyPrint();
+        response.prettyPrint();
 
         response.then().
                 assertThat().
                 statusCode(200).
                 contentType(ContentType.JSON).
                 statusLine("HTTP/1.1 200 OK");
+
 
     }
 }

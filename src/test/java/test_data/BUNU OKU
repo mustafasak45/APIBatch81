@@ -1,0 +1,6 @@
+Bu package API testi yaparken (Örn: get_requests, patch requests, post requests, put requests
+packageleri altındaki testler) testin body kısmında gelen karmasık Map yapılarını tekrar tekrar
+oluşturmamamk için içinde method olusturulan packagedir.
+
+Bu classlardaki methodları kullanırken Test yapılacak olan classta bu packagede kullanılacak olan
+classın adıyla obje olusturulup uygun olan methodun Map yapısı secilir.

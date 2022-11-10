@@ -41,11 +41,12 @@ public class Get05b_JsonPath extends ReqresBaseUrl {
         spec.pathParams("first","unknown","second",3);
 
         Response response=given().spec(spec).when().get("/{first}/{second}");
-        //response.prettyPrint();
+        response.prettyPrint();
 
         SoftAssert softAssert = new SoftAssert();
 
         JsonPath jsonPath=response.jsonPath();
+       // jsonPath.prettyPrint();
 
         softAssert.assertEquals(response.getStatusCode(),200);
         softAssert.assertEquals(response.contentType(), "application/json; charset=utf-8");

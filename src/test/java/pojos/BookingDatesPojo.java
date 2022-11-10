@@ -1,5 +1,9 @@
 package pojos;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class BookingDatesPojo {
 
     //Tüm Keyler icin variable'lar olusturuyoruz

@@ -50,7 +50,7 @@ public class Get06b_ArrayIcindenVeriCekme extends ReqresBaseUrl {
 
         System.out.println("id'si 3 ten buyuk olanlarin Tum bilgilerini = "+jsonPath.getList("data.findAll{it.id>3}"));
 
-        List<Integer> ids= jsonPath.getList("data.findAll{it.id>3}.id");
+        List<Integer> ids= jsonPath.getList("data.findAll{it.id>3}.id"); //findAll collection'in basladigi yerde kullanilir
         System.out.println("id'si 3 ten buyuk olanlarin id'sini getirdi ="+ids);
 
 //        Assert that there are 3 ids greater than 3

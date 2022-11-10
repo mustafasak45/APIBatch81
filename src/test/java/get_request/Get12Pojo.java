@@ -20,26 +20,26 @@ public class Get12Pojo extends RestfulBaseUrl {
 And
     Response body is like:
                        {
-                         "firstname": "Dane",
-                         "lastname": "Combs",
-                         "totalprice": 111,
-                         "depositpaid": true,
-                         "bookingdates": {
-                             "checkin": "2018-01-01",
-                             "checkout": "2019-01-01"
-                         },
-                         "additionalneeds": "Breakfast"
-                }
+    "firstname": "Guoqiang",
+    "lastname": "Liu",
+    "totalprice": 111,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+    },
+    "additionalneeds": "Breakfast"
+}
   */
 
     @Test
     public void get12Pojo() {
-        spec.pathParams("first","booking","second",18);
+        spec.pathParams("first","booking","second",19);
 
-        BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01","2019-01-01");
+        BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2022-01-01","2022-01-01");
        // System.out.println(bookingDatesPojo);
 
-        BookingPojo expData = new BookingPojo("Dane","Combs",111,true,bookingDatesPojo,"Breakfast");
+        BookingPojo expData = new BookingPojo("Jim","ozan",111,true,bookingDatesPojo,"kahvaltı");
         System.out.println("expData = " + expData);
 
         Response response = given().spec(spec).when().get("/{first}/{second}");

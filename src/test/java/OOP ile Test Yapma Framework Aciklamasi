@@ -1,0 +1,36 @@
+Olusturulan butun packageler; src-->test-->java package altında create edilir
+
+1-)base_urls ; içinde testlerde kullanılacak url'ler base url olarak kaydedilip, sonra farklı testlerde
+    tekrar tekrar girilmesine gerek bırakmayan packagedır.Bu package altındaki classı kullanmak için test
+    classından extends edilir
+
+2-)get_requests package,
+   patch_requests package,
+   post_requests package,
+   put_requests package ; Bu packageler yapılacak testin formatına(get,patch,post,put) göre altında classlar
+                          olusturulan packagelerdir.
+3-)pojos package ; Bu pack age altında test yapılacak URL'deki testden dönen bodynin kaç tane iç içe bilgi
+                girildiyse o kadar class açılır ve orada dönen body sistemine göre pojo classlar olusturulur
+
+                ÖRNEĞİN: URL=https://restful-booker.herokuapp.com/booking/19
+
+                {
+                    "firstname": "Guoqiang",
+                    "lastname": "Liu",
+                    "totalprice": 111,
+                    "depositpaid": true,
+                    "bookingdates": {                //burada ana body içinde baska yeni body oluturulmus
+                        "checkin": "2018-01-01",     //bunun için inner body için ayrı ana body için ayrı
+                        "checkout": "2019-01-01"     //class olusturulur
+                    },
+                    "additionalneeds": "Breakfast"
+                }
+
+     Burada pojos package'inda olusturulacak Classlar : BookingDatesPojo classı(inner bodynin oldugu class)
+                                                        BookingPojo classı (Ana bodynin oldugu class)
+     Her iki classta da yapılacaklar:  -'private' access modifier tipinde bütün değiskenler girilir.
+                                         Örn:firstname,lastname gibi
+                                        -Default constructor olusturulur.
+                                        -Bütün değiskenlerin oldugu constructor olusturulur.
+                                        -ToString() methodu olusturulur
+
